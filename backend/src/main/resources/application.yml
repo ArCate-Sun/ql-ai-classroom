@@ -205,8 +205,7 @@ ai:
     #            # AI 服务接口协议
     #            # openai: OpenAI 兼容接口
     #            # zai: zAI 接口
-    #            # bytedance-v3: 字节跳动 v3 接口
-    #            protocol: [openai|zai|bytedance-v3]
+    #            protocol: [openai|zai]
     #            # API 服务地址
     #            base-url: https://...
     #            # API 密钥

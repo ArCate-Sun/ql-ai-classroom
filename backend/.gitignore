@@ -1,10 +1,6 @@
 # Compiled class files
 *.class
 
-# Log files
-*.log
-logs/
-
 # Package Files
 *.jar
 *.war
@@ -86,8 +82,6 @@ logs/
 *.tmp
 *.temp
 *.bak
-*.swp
-*.swo
 
 # Test coverage
 .coverage
@@ -97,3 +91,5 @@ htmlcov/
 # JaCoCo
 jacoco.exec
 jacoco/
+
+CLAUDE.md
