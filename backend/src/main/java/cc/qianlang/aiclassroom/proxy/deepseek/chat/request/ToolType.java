@@ -14,6 +14,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public enum ToolType {
 
+	UNKNOWN("unknown"),
+
 	/**
 	 * 函数类型工具
 	 */
@@ -43,19 +45,17 @@ public enum ToolType {
 	/**
 	 * 从服务端返回的字符串值反序列化为 ToolType 枚举。
 	 * <p>
-	 * 空白或未匹配的字符串默认返回 {@link #FUNCTION}，保证反序列化健壮性。
+	 * 空白或未匹配的字符串默认返回 {@link #UNKNOWN}，保证反序列化健壮性。
 	 *
 	 * @param code 服务端返回的 tools[].type 字符串，例如 "function"
 	 * @return 对应的 ToolType 枚举值
 	 */
 	@JsonCreator
 	public static ToolType fromCode(@Nullable String code) {
-
-		if (StringUtils.isBlank(code)) return ToolType.FUNCTION;
-
+		if (StringUtils.isBlank(code)) return ToolType.UNKNOWN;
 		for (ToolType value : ToolType.values()) {
 			if (value.code.equals(code)) return value;
 		}
-		return ToolType.FUNCTION;
+		return ToolType.UNKNOWN;
 	}
 }

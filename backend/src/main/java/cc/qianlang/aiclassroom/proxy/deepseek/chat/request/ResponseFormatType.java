@@ -13,6 +13,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public enum ResponseFormatType {
 
+	UNKNOWN("unknown"),
+
 	/**
 	 * 纯文本格式（默认）
 	 */
@@ -47,17 +49,17 @@ public enum ResponseFormatType {
 	/**
 	 * 从服务端返回的字符串值反序列化为 ResponseFormatType 枚举。
 	 * <p>
-	 * 空白或未匹配的字符串默认返回 {@link #TEXT}，保证反序列化健壮性。
+	 * 空白或未匹配的字符串默认返回 {@link #UNKNOWN}，保证反序列化健壮性。
 	 *
 	 * @param code 服务端返回的 response_format.type 字符串，例如 "text"、"json_object"
 	 * @return 对应的 ResponseFormatType 枚举值
 	 */
 	@JsonCreator
 	public static ResponseFormatType fromCode(@Nullable String code) {
-		if (StringUtils.isBlank(code)) return TEXT;
+		if (StringUtils.isBlank(code)) return ResponseFormatType.UNKNOWN;
 		for (ResponseFormatType value : values()) {
 			if (value.code.equals(code)) return value;
 		}
-		return TEXT;
+		return ResponseFormatType.UNKNOWN;
 	}
 }

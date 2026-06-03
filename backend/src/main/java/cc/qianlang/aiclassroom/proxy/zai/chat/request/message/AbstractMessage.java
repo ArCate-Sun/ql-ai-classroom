@@ -1,16 +1,16 @@
-package cc.qianlang.aiclassroom.proxy.deepseek.chat.request.message;
+package cc.qianlang.aiclassroom.proxy.zai.chat.request.message;
 
 import org.jspecify.annotations.NullMarked;
 
 /**
- * DeepSeek API 请求消息的抽象基类。
+ * BigModel API 请求消息的抽象基类。
  * <p>
  * 每种角色的消息字段集合不同，通过子类分别建模：
  * <ul>
- *   <li>{@link SystemMessage} — {@code system}，系统提示词</li>
- *   <li>{@link UserMessage}   — {@code user}，用户输入</li>
- *   <li>{@link AssistantMessage} — {@code assistant}，模型回复（含工具调用、思考内容）</li>
- *   <li>{@link ToolMessage}   — {@code tool}，工具执行结果</li>
+ *   <li>{@link SystemMessage}    — {@code system}，系统提示词</li>
+ *   <li>{@link UserMessage}      — {@code user}，用户输入</li>
+ *   <li>{@link AssistantMessage} — {@code assistant}，模型回复（含工具调用）</li>
+ *   <li>{@link ToolMessage}      — {@code tool}，工具执行结果</li>
  * </ul>
  *
  * @author 阿猫_ACat

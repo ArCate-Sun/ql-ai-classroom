@@ -1,5 +1,6 @@
 package cc.qianlang.aiclassroom.proxy.deepseek.chat.response;
 
+import cc.qianlang.aiclassroom.proxy.deepseek.chat.request.message.MessageRole;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,7 +52,7 @@ public class ChatStreamChunkChoice {
 		 * 消息角色，仅在第一个 chunk 中为 {@code "assistant"}，后续 chunk 为 null。
 		 */
 		@Nullable
-		private String role;
+		private MessageRole role;
 
 		/**
 		 * 最终回答的增量文本片段。思考阶段此字段为 null；回答阶段逐 Token 填充。

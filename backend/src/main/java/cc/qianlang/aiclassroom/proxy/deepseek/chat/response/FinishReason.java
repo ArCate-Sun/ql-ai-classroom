@@ -13,6 +13,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public enum FinishReason {
 
+	UNKNOWN("unknown"),
+
 	/**
 	 * 模型自然停止生成，或遇到 stop 序列中列出的字符串
 	 */
@@ -61,17 +63,17 @@ public enum FinishReason {
 	/**
 	 * 从服务端返回的字符串值反序列化为 FinishReason 枚举。
 	 * <p>
-	 * 空白或未匹配的字符串默认返回 {@link #STOP}，保证反序列化健壮性。
+	 * 空白或未匹配的字符串默认返回 {@link #UNKNOWN}，保证反序列化健壮性。
 	 *
 	 * @param code 服务端返回的 finish_reason 字符串
 	 * @return 对应的 FinishReason 枚举值
 	 */
 	@JsonCreator
 	public static FinishReason fromCode(@Nullable String code) {
-		if (StringUtils.isBlank(code)) return STOP;
+		if (StringUtils.isBlank(code)) return FinishReason.UNKNOWN;
 		for (FinishReason value : values()) {
 			if (value.code.equals(code)) return value;
 		}
-		return STOP;
+		return FinishReason.UNKNOWN;
 	}
 }

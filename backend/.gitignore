@@ -93,3 +93,5 @@ jacoco.exec
 jacoco/
 
 CLAUDE.md
+
+docs/prompt-records

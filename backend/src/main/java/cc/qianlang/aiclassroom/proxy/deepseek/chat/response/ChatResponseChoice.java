@@ -1,7 +1,7 @@
 package cc.qianlang.aiclassroom.proxy.deepseek.chat.response;
 
 
-import cc.qianlang.aiclassroom.proxy.deepseek.chat.MessageRole;
+import cc.qianlang.aiclassroom.proxy.deepseek.chat.request.message.MessageRole;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

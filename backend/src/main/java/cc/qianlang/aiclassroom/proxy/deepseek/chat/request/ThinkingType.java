@@ -14,6 +14,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public enum ThinkingType {
 
+	UNKNOWN("unknown"),
+
 	/**
 	 * 开启思考模式
 	 */
@@ -47,19 +49,17 @@ public enum ThinkingType {
 	/**
 	 * 从服务端返回的字符串值反序列化为 ThinkingType 枚举。
 	 * <p>
-	 * 空白或未匹配的字符串默认返回 {@link #ENABLED}，保证反序列化健壮性。
+	 * 空白或未匹配的字符串默认返回 {@link #UNKNOWN}，保证反序列化健壮性。
 	 *
 	 * @param code 服务端返回的 thinking.type 字符串，例如 "enabled"、"disabled"
 	 * @return 对应的 ThinkingType 枚举值
 	 */
 	@JsonCreator
 	public static ThinkingType fromCode(@Nullable String code) {
-
-		if (StringUtils.isBlank(code)) return ThinkingType.ENABLED;
-
+		if (StringUtils.isBlank(code)) return ThinkingType.UNKNOWN;
 		for (ThinkingType value : ThinkingType.values()) {
 			if (value.code.equals(code)) return value;
 		}
-		return ThinkingType.ENABLED;
+		return ThinkingType.UNKNOWN;
 	}
 }

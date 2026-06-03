@@ -18,6 +18,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public enum ReasoningEffort {
 
+	UNKNOWN("unknown"),
+
 	/**
 	 * 高强度推理（默认）
 	 */
@@ -47,17 +49,17 @@ public enum ReasoningEffort {
 	/**
 	 * 从服务端返回的字符串值反序列化为 ReasoningEffort 枚举。
 	 * <p>
-	 * 空白或未匹配的字符串默认返回 {@link #HIGH}，保证反序列化健壮性。
+	 * 空白或未匹配的字符串默认返回 {@link #UNKNOWN}，保证反序列化健壮性。
 	 *
 	 * @param value 服务端返回的 reasoning_effort 字符串，例如 "high"、"max"、"none"
 	 * @return 对应的 ReasoningEffort 枚举值
 	 */
 	@JsonCreator
 	public static ReasoningEffort fromValue(@Nullable String value) {
-		if (StringUtils.isBlank(value)) return HIGH;
+		if (StringUtils.isBlank(value)) return ReasoningEffort.UNKNOWN;
 		for (ReasoningEffort effort : values()) {
 			if (effort.value.equals(value)) return effort;
 		}
-		return HIGH;
+		return ReasoningEffort.UNKNOWN;
 	}
 }

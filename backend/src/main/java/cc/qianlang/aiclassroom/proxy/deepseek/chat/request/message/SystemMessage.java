@@ -1,6 +1,5 @@
 package cc.qianlang.aiclassroom.proxy.deepseek.chat.request.message;
 
-import cc.qianlang.aiclassroom.proxy.deepseek.chat.MessageRole;
 import lombok.Builder;
 import lombok.Getter;
 import org.jspecify.annotations.NullMarked;

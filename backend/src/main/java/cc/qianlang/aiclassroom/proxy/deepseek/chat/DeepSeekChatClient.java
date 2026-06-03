@@ -117,7 +117,7 @@ public class DeepSeekChatClient {
 				.uri("/chat/completions")
 				.contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.TEXT_EVENT_STREAM)
-				.bodyValue(request)
+				.bodyValue(payload)
 				.retrieve()
 				.onStatus(
 						status -> !status.is2xxSuccessful(),

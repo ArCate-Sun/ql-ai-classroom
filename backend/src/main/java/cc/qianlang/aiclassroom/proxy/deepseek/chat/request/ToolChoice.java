@@ -13,6 +13,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public enum ToolChoice implements IToolChoice {
 
+	UNKNOWN("unknown"),
+
 	/**
 	 * 不调用任何工具，模型只输出文本（默认值）
 	 */
@@ -51,17 +53,17 @@ public enum ToolChoice implements IToolChoice {
 	/**
 	 * 从服务端返回的字符串值反序列化为 ToolChoicePreset 枚举。
 	 * <p>
-	 * 空白或未匹配的字符串默认返回 {@link #AUTO}，保证反序列化健壮性。
+	 * 空白或未匹配的字符串默认返回 {@link #UNKNOWN}，保证反序列化健壮性。
 	 *
 	 * @param code 服务端返回的 tool_choice 字符串，例如 "none"、"auto"、"required"
 	 * @return 对应的 ToolChoicePreset 枚举值
 	 */
 	@JsonCreator
 	public static ToolChoice fromCode(@Nullable String code) {
-		if (StringUtils.isBlank(code)) return AUTO;
+		if (StringUtils.isBlank(code)) return ToolChoice.UNKNOWN;
 		for (ToolChoice value : values()) {
 			if (value.code.equals(code)) return value;
 		}
-		return AUTO;
+		return ToolChoice.UNKNOWN;
 	}
 }
