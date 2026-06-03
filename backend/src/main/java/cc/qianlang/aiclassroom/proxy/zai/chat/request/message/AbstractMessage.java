@@ -3,7 +3,7 @@ package cc.qianlang.aiclassroom.proxy.zai.chat.request.message;
 import org.jspecify.annotations.NullMarked;
 
 /**
- * BigModel API 请求消息的抽象基类。
+ * Z.AI 对话补全接口请求消息的抽象基类。
  * <p>
  * 每种角色的消息字段集合不同，通过子类分别建模：
  * <ul>
