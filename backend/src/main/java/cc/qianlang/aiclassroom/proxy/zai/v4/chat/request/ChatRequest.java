@@ -1,7 +1,5 @@
 package cc.qianlang.aiclassroom.proxy.zai.v4.chat.request;
 
-import cc.qianlang.aiclassroom.proxy.zai.chat.request.message.*;
-import cc.qianlang.aiclassroom.proxy.zai.chat.request.tool.*;
 import cc.qianlang.aiclassroom.proxy.zai.v4.chat.request.message.*;
 import cc.qianlang.aiclassroom.proxy.zai.v4.chat.request.tool.*;
 import lombok.Builder;
